@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      <div className="navbar sticky top-3 md:p-5 bbg-slate-300	text-white text-2xl container mx-auto bg-[#660000] rounded-2xl">
+      <div className="navbar sticky top-0 md:p-5 bbg-slate-300	text-white text-2xl bg-[#660000]">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

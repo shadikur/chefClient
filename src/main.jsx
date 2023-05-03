@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LandingPage from "./layout/LandingPage";
@@ -8,7 +7,8 @@ import Home from "./pages/home/Home";
 import StandardPages from "./layout/StandardPages";
 import Contact from "./pages/contact/Contact.jsx";
 import Login from "./pages/login/Login.jsx";
-import Register from "./pages/register/Register";
+import Blog from "./pages/blog/Blog.jsx";
+import Register from "./pages/register/register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/pages/blog",
-        element: <p>TEST</p>,
+        element: <Blog></Blog>,
       },
       {
         path: "/pages/login",
