@@ -4,7 +4,7 @@ import Hero from "../Hero/Hero";
 
 const Header = () => {
   return (
-    <div className="bg-gradient-to-b from-green-50 to-green-100">
+    <div className="bg-[url('https://res.cloudinary.com/ddez9nchs/image/upload/v1683138143/Thai-Chef/chef_hero.png')]">
       <NavBar></NavBar>
       <Hero></Hero>
     </div>
