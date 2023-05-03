@@ -6,6 +6,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LandingPage from "./layout/LandingPage";
 import Home from "./pages/home/Home";
 import StandardPages from "./layout/StandardPages";
+import Contact from "./pages/contact/Contact.jsx";
+import Login from "./pages/login/Login.jsx";
+import Register from "./pages/register/Register";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +26,20 @@ const router = createBrowserRouter([
     element: <StandardPages></StandardPages>,
     children: [
       {
-        path: "/pages",
+        path: "/pages/blog",
         element: <p>TEST</p>,
+      },
+      {
+        path: "/pages/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/pages/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/pages/contact",
+        element: <Contact></Contact>,
       },
     ],
   },
