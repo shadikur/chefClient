@@ -6,12 +6,14 @@ const Newsletter = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-left sm:text-center">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Get full access to Celebration
+            Join Our Newsletter Community
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            As a subscriber, you'll get access to our library of authentic Thai
+            recipes that you won't find anywhere else. From classic dishes like
+            Pad Thai and Tom Yum soup to lesser-known favorites like Khao Soi
+            and Gaeng Daeng, you'll be able to recreate the flavors of Thailand
+            in your own kitchen.
           </p>
         </div>
 
@@ -30,7 +32,9 @@ const Newsletter = () => {
               />
             </svg>
             <div className="ml-4">
-              <h3 className="text-xl font-semibold text-black">130+ Blocks</h3>
+              <h3 className="text-xl font-semibold text-black">
+                Exclusive access
+              </h3>
               <p className="mt-1.5 text-base text-gray-600">Ready to use</p>
             </div>
           </div>
@@ -49,7 +53,7 @@ const Newsletter = () => {
               />
             </svg>
             <div className="ml-4">
-              <h3 className="text-xl font-semibold text-black">14 Pages</h3>
+              <h3 className="text-xl font-semibold text-black">Insider tips</h3>
               <p className="mt-1.5 text-base text-gray-600">Make it live</p>
             </div>
           </div>

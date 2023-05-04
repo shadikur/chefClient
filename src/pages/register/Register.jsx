@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
   const { user, createUser, updateUserProfile } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
-
-  user && <Navigate to="/" />;
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -16,7 +14,6 @@ const Register = () => {
     const password = form.password.value;
     const displayName = form.displayName.value;
     const photoURL = form.photoURL.value;
-
     try {
       setLoading(true);
       createUser(email, password)
@@ -31,7 +28,7 @@ const Register = () => {
               const errorMessage = error.message;
               toast.error(errorMessage);
             });
-          toast.success("User created successfully");
+          toast.success("User created successfully!");
         })
         .catch((error) => {
           const errorMessage = error.message;

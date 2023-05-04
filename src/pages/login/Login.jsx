@@ -1,7 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
+  const navitgate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signIn(email, password)
+        .then((res) => {
+          toast.success("Login success");
+          navitgate(from, { replace: true });
+        })
+        .catch((err) => {
+          toast.error(err.message);
+        });
+      // User is signed in
+    } catch (error) {
+      console.log(error);
+      // Handle sign-in error
+    }
+  };
+
   return (
     <section className="bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -21,21 +49,20 @@ const Login = () => {
                 Join today
               </Link>
             </p>
-            <form action="#" method="POST" className="mt-8">
+            <form onSubmit={handleSubmit} className="mt-8">
               <div className="space-y-5">
                 <div>
                   <label
                     htmlFor=""
                     className="text-base font-medium text-gray-900"
                   >
-                    {" "}
-                    Email address{" "}
+                    Email address
                   </label>
                   <div className="mt-2.5">
                     <input
                       type="email"
-                      name=""
-                      id=""
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter email to get started"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
@@ -47,23 +74,14 @@ const Login = () => {
                       htmlFor=""
                       className="text-base font-medium text-gray-900"
                     >
-                      {" "}
-                      Password{" "}
+                      Password
                     </label>
-                    <a
-                      href="#"
-                      title=""
-                      className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"
-                    >
-                      {" "}
-                      Forgot password?{" "}
-                    </a>
                   </div>
                   <div className="mt-2.5">
                     <input
                       type="password"
-                      name=""
-                      id=""
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter your password"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
@@ -103,14 +121,14 @@ const Login = () => {
                 <div className="absolute inset-y-0 left-0 p-4">
                   <svg
                     aria-hidden="true"
-                    class="octicon octicon-mark-github"
+                    className="octicon octicon-mark-github"
                     height="24"
                     version="1.1"
                     viewBox="0 0 16 16"
                     width="24"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
                     ></path>
                   </svg>
@@ -120,15 +138,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center px-4 py-10 sm:py-16 lg:py-24 bg-gray-50 sm:px-6 lg:px-8">
-          <div>
-            <img
-              className="h-[100vh] mx-auto rounded-3xl"
-              src="https://res.cloudinary.com/ddez9nchs/image/upload/v1683150960/Thai-Chef/top-view-thai-curry-prawn-2022-12-24-00-42-18-utc.jpg"
-              alt=""
-            />
-          </div>
-        </div>
+        <div className="flex items-center justify-center px-4 py-10 sm:py-16 lg:py-24 bg-[url('https://res.cloudinary.com/ddez9nchs/image/upload/v1683150623/Thai-Chef/thai-shrimps-red-curry-thailand-thai-tradition-re-2022-02-02-03-57-51-utc-min.jpg')] bg-cover sm:px-6 lg:px-8"></div>
       </div>
     </section>
   );

@@ -8,14 +8,12 @@ const Hero = () => {
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-bold text-white sm:text-6xl lg:text-7xl">
-                Experience Authentic Thai Cuisine: Prepared by Our Master Thai
-                Chef
+                Authentic Thai Flavors by Master Chef
               </h1>
 
               <p className="mt-8 text-base text-white sm:text-xl">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat.
+                Bringing the flavors of Thailand to your table with every dish.
+                Elevating your dining experience with authentic Thai cuisine.
               </p>
 
               <div className="mt-10 sm:flex sm:items-center sm:space-x-8">

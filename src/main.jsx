@@ -10,11 +10,15 @@ import Login from "./pages/login/Login.jsx";
 import Blog from "./pages/blog/Blog.jsx";
 import Register from "./pages/register/register.jsx";
 import AuthProvider from "./provider/AuthProvider";
+import Chefs from "./pages/chefs/Chefs";
+import Error from "./pages/error/Error";
+import ChefsProfile from "./pages/chefsprofile/ChefsProfile";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage></LandingPage>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -25,10 +29,21 @@ const router = createBrowserRouter([
   {
     path: "/pages",
     element: <StandardPages></StandardPages>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/pages/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/pages/chefs",
+        element: <Chefs></Chefs>,
+      },
+      {
+        path: "/pages/chefsprofile/:id",
+        element: <ChefsProfile></ChefsProfile>,
+        loader: ({ params }) =>
+          fetch(`https://chef-server-sigma.vercel.app/chef/${params.id}`),
       },
       {
         path: "/pages/login",
