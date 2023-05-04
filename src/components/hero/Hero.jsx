@@ -8,7 +8,8 @@ const Hero = () => {
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h1 className="text-4xl font-bold text-white sm:text-6xl lg:text-7xl">
-                Collaborate remotely, with Postcrafs.
+                Experience Authentic Thai Cuisine: Prepared by Our Master Thai
+                Chef
               </h1>
 
               <p className="mt-8 text-base text-white sm:text-xl">

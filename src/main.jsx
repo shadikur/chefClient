@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact.jsx";
 import Login from "./pages/login/Login.jsx";
 import Blog from "./pages/blog/Blog.jsx";
 import Register from "./pages/register/register.jsx";
+import AuthProvider from "./provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>
 );

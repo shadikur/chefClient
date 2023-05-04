@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useLocation } from "react-router-dom";
 
-const PrivateRoute = () => {
-  return <div></div>;
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  console.log("user in private route", user);
+
+  if (loading) {
+    return <Spinner animation="border" variant="primary" />;
+  }
+
+  if (user) {
+    return children;
+  }
+  return <Navigate state={{ from: location }} to="/login" replace></Navigate>;
 };
 
 export default PrivateRoute;

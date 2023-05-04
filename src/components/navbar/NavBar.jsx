@@ -1,8 +1,16 @@
-import React from "react";
-import Chef from "./../../pages/chef/Chef";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="navbar sticky top-0 md:p-5 bbg-slate-300	text-white text-2xl bg-[#660000]">
@@ -31,33 +39,14 @@ const NavBar = () => {
               <li>
                 <Link to={`/`}>Home</Link>
               </li>
-              <li tabIndex={0}>
-                <a className="justify-between">
-                  Our Chefs
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </a>
-                <ul className="p-2 bg-[#660000]">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+              <li>
+                <Link to={`/chefs`}>Our Chefs</Link>
               </li>
               <li>
-                <a>Blog</a>
+                <Link to={`/pages/blog`}>Blog</Link>
               </li>
               <li>
-                <a>Contact us</a>
+                <Link to={`/pages/contact`}>Contact</Link>
               </li>
             </ul>
           </div>
@@ -74,27 +63,8 @@ const NavBar = () => {
             <li>
               <Link to={`/`}>Home</Link>
             </li>
-            <li tabIndex={0}>
-              <a>
-                Our Chefs
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2 bg-[#660000]">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+            <li>
+              <Link to={`/chefs`}>Our Chefs</Link>
             </li>
             <li>
               <Link to={`/pages/blog`}>Blog</Link>
@@ -105,22 +75,65 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-hover">
-            <label tabIndex={0} className="btn m-1">
-              Members Area
-            </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-[#660000] rounded-box"
-            >
-              <li>
-                <Link to={`/pages/login`}>Login</Link>
-              </li>
-              <li>
-                <Link to={`/pages/register`}>Register</Link>
-              </li>
-            </ul>
-          </div>
+          {
+            // If user is logged in, show logout button, else show login/register buttons
+            user ? (
+              <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className="btn m-1">
+                  {user?.photoURL ? (
+                    <img
+                      src={user?.photoURL}
+                      className="h-8 w-8 rounded-full"
+                    />
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-8 rounded-full"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      )
+                      <path
+                        fillRule="evenodd"
+                        d="M10 12a4 4 0 100-8 4 4 0 000 8z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+
+                  <span className="pl-3">{user?.displayName}</span>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-[#660000] rounded-box"
+                >
+                  <li>
+                    <Link to={`/pages/updateprofile`}>Update Profile</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogOut}>Logout</button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className="btn m-1">
+                  Members Area
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-[#660000] rounded-box"
+                >
+                  <li>
+                    <Link to={`/pages/login`}>Login</Link>
+                  </li>
+                  <li>
+                    <Link to={`/pages/register`}>Register</Link>
+                  </li>
+                </ul>
+              </div>
+            )
+          }
         </div>
       </div>
     </>
