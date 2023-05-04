@@ -8,7 +8,7 @@ const ChefsProfile = () => {
   console.log(ChefsProfileData);
   return (
     <div>
-      <section className="pt-10 overflow-hidden bg-gray-50 md:pt-0 sm:pt-16 2xl:pt-16">
+      <section className="pt-10 overflow-hidden bg-gray-50 md:pt-0 sm:pt-16 2xl:pt-16 pb-5">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid items-center grid-cols-1 md:grid-cols-2">
             <div>
@@ -30,12 +30,7 @@ const ChefsProfile = () => {
             </div>
             <div className="relative">
               <img
-                className="absolute inset-x-0 bottom-0 -mb-48 -translate-x-1/2 left-1/2"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/team/1/blob-shape.svg"
-                alt=""
-              />
-              <img
-                className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110"
+                className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110 rounded-2xl"
                 src={ChefsProfileData.chef_picture}
                 alt=""
               />
@@ -43,17 +38,16 @@ const ChefsProfile = () => {
           </div>
         </div>
       </section>
-      <div className="divider"></div>
+      <div className="divider m-0 bg-[#660000]"></div>
       <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl">
-              Here are some of my <br className="hidden md:block" /> latest
-              Recepie
+              Here are my <br className="hidden md:block" /> top 3 recepies
             </h2>
             <p className="text-xs mt-3">
-              (** All my Recepie are made with love and care, exclusively for
-              the members**)
+              All of our recepies are made with love and care, exclusively for
+              the members
             </p>
           </div>
           <div className="grid grid-cols-1 mt-12 lg:mt-24 gap-y-12 md:grid-cols-3 gap-x-6">
