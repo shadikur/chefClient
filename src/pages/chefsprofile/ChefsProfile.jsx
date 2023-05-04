@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import Recepie from "./../recepie/Recepie";
 import RecipeCard from "../../components/recipeCard/RecipeCard";
+import { FcGraduationCap, FcLike, FcList } from "react-icons/fc";
 
 const ChefsProfile = () => {
   const ChefsProfileData = useLoaderData();
@@ -19,6 +19,19 @@ const ChefsProfile = () => {
               <p className="max-w-lg mt-3 text-xl leading-relaxed text-gray-600 md:mt-8">
                 {ChefsProfileData.bio}
               </p>
+              <div className="mt-4 text-xl text-gray-600 md:mt-8">
+                <p className="flex items-center gap-2">
+                  <FcGraduationCap className="text-4xl" />
+                  {ChefsProfileData.years_of_experience} years of experience
+                </p>
+                <p className="flex items-center gap-2">
+                  <FcLike className="text-4xl" /> {ChefsProfileData.likes} likes
+                </p>
+                <p className="flex items-center gap-2">
+                  <FcList className="text-4xl" /> {ChefsProfileData.num_recipes}{" "}
+                  recipes
+                </p>
+              </div>
               <p className="mt-4 text-xl text-gray-600 md:mt-8">
                 <span className="relative inline-block">
                   <span className="absolute inline-block w-full bottom-0.5 h-2 bg-yellow-300" />

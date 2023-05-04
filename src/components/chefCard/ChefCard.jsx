@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Recepie from "./../../pages/recepie/Recepie";
 
 const ChefCard = ({ chef }) => {
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-white rounded-xl">
         <div className="py-8 px-9 text-center">
           <img
-            className="w-32 h-32 rounded-full mx-auto"
+            className="w-32 h-32 rounded-full mx-auto object-cover"
             src={chef.chef_picture}
             alt=""
           />
