@@ -5,7 +5,6 @@ import { FcGraduationCap, FcLike, FcList } from "react-icons/fc";
 
 const ChefsProfile = () => {
   const ChefsProfileData = useLoaderData();
-  console.log(ChefsProfileData);
   return (
     <div>
       <section className="pt-10 overflow-hidden bg-gray-50 md:pt-0 sm:pt-16 2xl:pt-16 pb-5">

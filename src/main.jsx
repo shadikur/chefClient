@@ -13,6 +13,8 @@ import AuthProvider from "./provider/AuthProvider";
 import Chefs from "./pages/chefs/Chefs";
 import Error from "./pages/error/Error";
 import ChefsProfile from "./pages/chefsprofile/ChefsProfile";
+import PrivateRoute from "./route/PrivateRoute";
+import UpdateProfile from "./pages/updateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/pages/chefsprofile/:id",
-        element: <ChefsProfile></ChefsProfile>,
+        element: (
+          <PrivateRoute>
+            <ChefsProfile></ChefsProfile>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://chef-server-sigma.vercel.app/chef/${params.id}`),
       },
@@ -56,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/pages/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/pages/updateprofile",
+        element: <UpdateProfile></UpdateProfile>,
       },
     ],
   },

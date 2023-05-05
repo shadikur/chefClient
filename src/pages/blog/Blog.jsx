@@ -6,32 +6,33 @@ const Blog = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            Stories from blog
+            Four important React Interview Questions and Answers
           </h2>
-          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-200">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis.
-          </p>
         </div>
         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full lg:gap-14">
           <div className="flex flex-col overflow-hidden bg-white shadow-md rounded-xl">
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
               <div className="flex-shrink-0">
                 <span className="block text-xs font-semibold tracking-widest text-orange-500 uppercase">
-                  {" "}
-                  Lifestyle{" "}
+                  React Components
                 </span>
               </div>
               <div className="flex-1 mt-28">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
-                    {" "}
-                    Power of habit: How to learn anything in 30 days.{" "}
+                    What are controlled and uncontrolled components in React?
                   </a>
                 </p>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Controlled components are those whose state is managed by
+                  React. They receive the current state value through props and
+                  only change when the parent component re-renders. On the other
+                  hand, uncontrolled components store their own state
+                  internally, which is not managed by React. The value of the
+                  component can change outside of React's control, such as
+                  through a user's input. Examples of controlled components
+                  include input and textarea elements, while an example of an
+                  uncontrolled component is a regular HTML element.
                 </p>
               </div>
             </div>
@@ -74,20 +75,21 @@ const Blog = () => {
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
               <div className="flex-shrink-0">
                 <span className="block text-xs font-semibold tracking-widest text-orange-500 uppercase">
-                  {" "}
-                  Technology{" "}
+                  React Prototype
                 </span>
               </div>
               <div className="flex-1 mt-28">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
-                    {" "}
-                    10 Zoom hacks you can do for productive meetings.{" "}
+                    How do you validate React props using PropTypes?
                   </a>
                 </p>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  React provides PropTypes to validate the data types of props
+                  passed to a component. PropTypes are added to a component as a
+                  property. For example, if you want to validate a component's
+                  prop named "name" as a string, you can add PropTypes to the
+                  component like this:
                 </p>
               </div>
             </div>
@@ -130,15 +132,13 @@ const Blog = () => {
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
               <div className="flex-shrink-0">
                 <span className="block text-xs font-semibold tracking-widest text-orange-500 uppercase">
-                  {" "}
-                  Marketing{" "}
+                  Node vs Express
                 </span>
               </div>
               <div className="flex-1 mt-28">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
-                    {" "}
-                    6 Product launching emails you want to use next.{" "}
+                    What is the difference between Node.js and Express.js?
                   </a>
                 </p>
                 <p className="mt-4 text-base text-gray-600">

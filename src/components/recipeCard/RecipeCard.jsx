@@ -3,7 +3,6 @@ import { FaHeart } from "react-icons/fa";
 import ReactStarsRating from "react-awesome-stars-rating";
 
 const RecipeCard = ({ recipeData }) => {
-  console.log(recipeData);
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -29,7 +28,10 @@ const RecipeCard = ({ recipeData }) => {
           <p>
             <b>Ingredients:</b> <br />
             {recipeData.ingredients.map((ingredient) => (
-              <span className="btn btn-outline btn-sm m-1">{ingredient}</span>
+              <span className="btn btn-outline btn-sm m-1">
+                {ingredient.id}
+                {ingredient}
+              </span>
             ))}
           </p>
           <p>
