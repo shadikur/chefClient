@@ -39,7 +39,7 @@ const UpdateProfile = () => {
                 <p className="mt-4 text-base text-gray-600">
                   You can update your name & profile photo here
                 </p>
-                <form action="#" method="POST" className="mt-4">
+                <form className="mt-4">
                   <div className="space-y-6">
                     <div>
                       <label

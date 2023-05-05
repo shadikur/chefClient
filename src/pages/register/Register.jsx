@@ -13,6 +13,12 @@ const Register = () => {
   } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
+  const validatePasswordLength = (password) => {
+    if (password.trim().length < 6) {
+      toast.error("Password must be at least 6 characters long");
+    }
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,6 +26,7 @@ const Register = () => {
     const password = form.password.value;
     const displayName = form.displayName.value;
     const photoURL = form.photoURL.value;
+
     try {
       setLoading(true);
       createUser(email, password)
@@ -84,7 +91,7 @@ const Register = () => {
                   </div>
                   <span className="text-lg font-medium text-white">
                     {" "}
-                    Commercial License{" "}
+                    Loved by all{" "}
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -104,7 +111,7 @@ const Register = () => {
                   </div>
                   <span className="text-lg font-medium text-white">
                     {" "}
-                    Unlimited Exports{" "}
+                    Unlimited Access{" "}
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -124,7 +131,7 @@ const Register = () => {
                   </div>
                   <span className="text-lg font-medium text-white">
                     {" "}
-                    120+ Coded Blocks{" "}
+                    120+ Recepie{" "}
                   </span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -144,7 +151,7 @@ const Register = () => {
                   </div>
                   <span className="text-lg font-medium text-white">
                     {" "}
-                    Design Files Included{" "}
+                    Methods included{" "}
                   </span>
                 </li>
               </ul>
@@ -262,7 +269,9 @@ const Register = () => {
                     <input
                       type="password"
                       name="password"
+                      id="password"
                       placeholder="Enter your password"
+                      onBlur={(e) => validatePasswordLength(e.target.value)}
                       className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                       required
                     />

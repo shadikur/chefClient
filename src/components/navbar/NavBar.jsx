@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -38,7 +38,9 @@ const NavBar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#660000] rounded-box w-52"
             >
               <li>
-                <Link to={`/`}>Home</Link>
+                <NavLink activeClassName="bg-black" to={`/`}>
+                  Home
+                </NavLink>
               </li>
               <li>
                 <Link to={`/pages/chefs`}>Our Chefs</Link>
@@ -62,16 +64,24 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to={`/`}>Home</Link>
+              <NavLink activeClassName="is-active" to={`/`}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to={`/pages/chefs`}>Our Chefs</Link>
+              <NavLink activeClassName="is-active" to={`/pages/chefs`}>
+                Our Chefs
+              </NavLink>
             </li>
             <li>
-              <Link to={`/pages/blog`}>Blog</Link>
+              <NavLink activeClassName="is-active" to={`/pages/blog`}>
+                Blog
+              </NavLink>
             </li>
             <li>
-              <Link to={`/pages/contact`}>Contact</Link>
+              <NavLink activeClassName="is-active" to={`/pages/contact`}>
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -109,7 +119,12 @@ const NavBar = () => {
                   className="dropdown-content menu p-2 shadow bg-[#660000] rounded-box"
                 >
                   <li>
-                    <Link to={`/pages/updateprofile`}>Update Profile</Link>
+                    <NavLink
+                      activeClassName="is-active"
+                      to={`/pages/updateprofile`}
+                    >
+                      Update Profile
+                    </NavLink>
                   </li>
                   <li>
                     <button onClick={handleLogOut}>Logout</button>

@@ -1,8 +1,15 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
 import ReactStarsRating from "react-awesome-stars-rating";
+import { toast } from "react-toastify";
 
 const RecipeCard = ({ recipeData }) => {
+  const [disabled, setDisabled] = React.useState(false);
+
+  const loveReact = () => {
+    setDisabled(true);
+    toast.success("Recipe added to favourites");
+  };
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -38,7 +45,11 @@ const RecipeCard = ({ recipeData }) => {
             <b>Method:</b> {recipeData.cooking_method}
           </p>
           <div className="card-actions">
-            <button className="btn btn-outline btn-secondary">
+            <button
+              className="btn btn-outline btn-secondary"
+              onClick={loveReact}
+              disabled={disabled}
+            >
               <FaHeart />
             </button>
           </div>
