@@ -9,7 +9,7 @@ const Blog = () => {
             Four important React Interview Questions and Answers
           </h2>
         </div>
-        <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full lg:gap-14">
+        <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-2 lg:max-w-full lg:gap-14">
           <div className="flex flex-col overflow-hidden bg-white shadow-md rounded-xl">
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
               <div className="flex-shrink-0">
@@ -17,7 +17,7 @@ const Blog = () => {
                   React Components
                 </span>
               </div>
-              <div className="flex-1 mt-28">
+              <div className="flex-1 mt-16">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
                     What are controlled and uncontrolled components in React?
@@ -36,40 +36,6 @@ const Blog = () => {
                 </p>
               </div>
             </div>
-            <div className="border-t border-gray-200">
-              <div className="flex">
-                <div className="flex items-center flex-1 px-6 py-5">
-                  <img
-                    className="object-cover w-8 h-8 rounded-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/3/avatar-1.jpg"
-                    alt=""
-                  />
-                  <span className="flex-1 block min-w-0 ml-3 text-base font-semibold text-gray-900 truncate">
-                    {" "}
-                    Wade Warren{" "}
-                  </span>
-                </div>
-                <a
-                  href="#"
-                  title=""
-                  className="inline-flex items-center flex-shrink-0 px-4 py-5 text-base font-semibold transition-all duration-200 bg-white border-l border-gray-200 hover:bg-blue-600 hover:text-white"
-                >
-                  Read more
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
           </div>
           <div className="flex flex-col overflow-hidden bg-white shadow-md rounded-xl">
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
@@ -78,7 +44,7 @@ const Blog = () => {
                   React Prototype
                 </span>
               </div>
-              <div className="flex-1 mt-28">
+              <div className="flex-1 mt-16">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
                     How do you validate React props using PropTypes?
@@ -93,40 +59,6 @@ const Blog = () => {
                 </p>
               </div>
             </div>
-            <div className="border-t border-gray-200">
-              <div className="flex">
-                <div className="flex items-center flex-1 px-6 py-5">
-                  <img
-                    className="object-cover w-8 h-8 rounded-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/3/avatar-2.jpg"
-                    alt=""
-                  />
-                  <span className="flex-1 block min-w-0 ml-3 text-base font-semibold text-gray-900 truncate">
-                    {" "}
-                    Leslie Alexander{" "}
-                  </span>
-                </div>
-                <a
-                  href="#"
-                  title=""
-                  className="inline-flex items-center flex-shrink-0 px-4 py-5 text-base font-semibold transition-all duration-200 bg-white border-l border-gray-200 hover:bg-blue-600 hover:text-white"
-                >
-                  Read more
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
           </div>
           <div className="flex flex-col overflow-hidden bg-white shadow-md rounded-xl">
             <div className="flex flex-col justify-between flex-1 px-5 py-6">
@@ -135,50 +67,49 @@ const Blog = () => {
                   Node vs Express
                 </span>
               </div>
-              <div className="flex-1 mt-28">
+              <div className="flex-1 mt-16">
                 <p className="text-2xl font-semibold">
                   <a href="#" title="" className="text-black">
                     What is the difference between Node.js and Express.js?
                   </a>
                 </p>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Node.js is a runtime environment for JavaScript that allows
+                  developers to run JavaScript on the server-side. It is used to
+                  build server-side applications, such as APIs, web
+                  applications, and command-line tools. Express.js is a web
+                  framework built on top of Node.js that simplifies the process
+                  of building web applications and APIs. Express.js provides a
+                  set of features and tools that make it easier to build web
+                  applications, such as routing, middleware, and templating.
                 </p>
               </div>
             </div>
-            <div className="border-t border-gray-200">
-              <div className="flex">
-                <div className="flex items-center flex-1 px-6 py-5">
-                  <img
-                    className="object-cover w-8 h-8 rounded-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/3/avatar-3.jpg"
-                    alt=""
-                  />
-                  <span className="flex-1 block min-w-0 ml-3 text-base font-semibold text-gray-900 truncate">
-                    {" "}
-                    Jenny Wilson{" "}
-                  </span>
-                </div>
-                <a
-                  href="#"
-                  title=""
-                  className="inline-flex items-center flex-shrink-0 px-4 py-5 text-base font-semibold transition-all duration-200 bg-white border-l border-gray-200 hover:bg-blue-600 hover:text-white"
-                >
-                  Read more
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
+          </div>
+          <div className="flex flex-col overflow-hidden bg-white shadow-md rounded-xl">
+            <div className="flex flex-col justify-between flex-1 px-5 py-6">
+              <div className="flex-shrink-0">
+                <span className="block text-xs font-semibold tracking-widest text-orange-500 uppercase">
+                  Custom Hook
+                </span>
+              </div>
+              <div className="flex-1 mt-16">
+                <p className="text-2xl font-semibold">
+                  <a href="#" title="" className="text-black">
+                    What is a custom hook, and why would you create one?
+                  </a>
+                </p>
+                <p className="mt-4 text-base text-gray-600">
+                  A custom hook is a function that encapsulates reusable logic
+                  that can be shared across multiple components. Custom hooks
+                  can be used to abstract away complex logic and reduce
+                  repetition in code. Custom hooks can be created to handle any
+                  kind of logic, such as state management, data fetching, or
+                  event handling. You would create a custom hook when you find
+                  yourself repeating the same logic in multiple components. By
+                  creating a custom hook, you can encapsulate the logic and
+                  reuse it across multiple components.
+                </p>
               </div>
             </div>
           </div>

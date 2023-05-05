@@ -8,11 +8,11 @@ const UpdateProfile = () => {
       <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:items-stretch md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
           <div className="flex flex-col justify-between lg:py-5">
-            <div>
-              <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:leading-tight lg:text-5xl">
+            <div className=" text-white">
+              <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:leading-tight lg:text-5xl">
                 Hello!
               </h2>
-              <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-white">
+              <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed pb-6">
                 Here is your information that we have in our system. You can
                 update your information here.
               </p>
@@ -83,6 +83,14 @@ const UpdateProfile = () => {
                         Update
                       </button>
                     </div>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 border border-transparent rounded-md focus:outline-none hover:bg-orange-600 focus:bg-orange-600 mt-4"
+                    >
+                      Request for a new password
+                    </button>
                   </div>
                 </form>
               </div>
